@@ -1,59 +1,34 @@
-# Precision Control
+# High Power Control
 
 ## Tyler Brady & Mike Guiliano
 
-## PWM 2
-For this section of the lab the code only runs on the 5529. In this section of the lab UART was used as a method
-of input into the MSP device to change the PWM speed. By entering a value in hex through realterm, the PWM signal 
-could be actively set during run time. The output of the PWM was then run through an active lowpass filter as seen 
-below in the circuits section. This is done so that only the carrier frequency of the PWM signal may pass, producing
-a DC signal of the averaged of the signal. This is important in regards to translating a digital signal into an analog one.
+## Background
+In some cases, high power is required within a system. This is one thing when the device only requires high power and no control over said high power, however,
+when dealing with a control system and high power a problem can arise. Take for example the MSP430 devices which can only supply around 3.3V
+and a varying current that tends around the milliAmps. In order to control a system that requires high power with a device that cannot supply said high power
+require some form of a buffered switch, such as a relay or a mosfet. One problem with a switch of these forms is that by adding in a extra step,
+extra time must be taken for each of these switches to toggle. As a result this section of the lab will be dedicated to testing the difference in time
+in these high power control methods.
 
-## Connections
-In this code the PWM output is tied to P1.2, while TXD is P3.3 and RXD is P3.4. The output of the PWM can then be connected
-to the low pass circuit, and the device can be communcated with over Realterm.
+## Usage
+In this section of the lab two different circuits were used. Circuit one revolves around using a relay switch.
+In this circuit the G2553 had its PWM output tied to a NMOS gate which controlled the relay's inductor's connection to ground.
+Essentally this allows the MSP430 to drive a strong enough signal to switch the relay on and off without killing the MSP430 with the high current 
+required to power the relay. Then the speed at which the relay could flip on and off was determined by increasing the frequency of the square wave
+toggling the device. The frequency found to produce a square wave which was no longer useable was around 30Hz.
+A similar setup was done for the secound except this time with no relay, and instead only a NMOS. It was found that a NMOS has a much
+high breakdown speed at around 260KHz. The code used to toggle the 
 
-## R2R DAC
-The main idea behind an R2R ladder is that it can take in digital binary values, and then using a set up of resistors
-such as the one seen below in the circuits section converting the digital values into a analog signal. This process was
-done using a incrementing output. By outputting across P6.0 to P6.6 and P2.7 each of the pins acts as a binary bit within
-the 8 bit byte. Once the byte hits 255, the byte resets to 0. Each of these pins is then connected to one of the legs of the
-R2R ladder producing a triangle function.
+## Devices
+* MSP430G2553
+This project was done only on the G2553 because of the issue of high power. In order to avoid any possible problems
+of frying the board, the G2553 was used so that a fried chip could be replaced easily.
 
-## Connections
-Each of the 8 pins is connected starting from P6.0 to the left most leg, all the way to P2.7 at the rightmost leg.
-Then using the supplied code the user can generate a triangle wave.
-
-## Bill Of Materials
-* 1k Resistor x 7
-* 2k Resistor x 9
-* 10k Resistor x 2
-* 270k Resistor x 1
-* 470k Resistor x 1
-* 680k Resistor x 1
-* 820k Resistor x 1
-* 1M Resistor x 1
-* LM324 x 1
-* 100nF Capacitor x 1
-
-## Circuits
-![Low Pass Filter]()
-![R2R DAC]()
-
-## Scopes
-![R2R Ladder Output]()
-![R2R Ladder Output w/ 560k Load]()
-![R2R Ladder Output w/ 1M Load]()
-
-[NEEDS THE DELIVERABLE PARTS FOR SCREENSHOTS!!]
-[Along with what was asked in each of the parts above, for each implementation, you need to generate at least one
- triangle wave from your microntroller. This can be done by simply incrementing and decrementing values that are 
-being sent to your circuit. You need to measure the output of each one of these along with taking the FFT on the 
-scope of each one. The span on the FFT will need to go from 1kHz to about 50kHz if possible. 
-You then need to compare the integrity of each signal by analyzing the difference in frequency components.
-
-The README for this part is going to be mainly about the results of your measurement along with information on the 
-implementation. You need to also talk about how you generated the triangle wave, but do not give me a 
-dissertation on it. Since this is going to be talking about hardware, you need to place in the README a Bill Of 
-Materials listing all hardware used as well as link to a Digikey cart which contains the parts needed in the 
-right quantity. You do not need to include things like your F5529 or the breadboard or wires.]
+##Circuits
+![Relay Circuit]()
+![Mosfet Circuit]()
+##Scopes
+![Relay 1Hz]()
+![Relay XXXHz]()
+![Mosfet 1Hz]()
+![Mosfet 260KHz]()
