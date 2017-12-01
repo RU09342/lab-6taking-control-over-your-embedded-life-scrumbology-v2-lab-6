@@ -1,16 +1,59 @@
-# Lab 6: "High Power" Control
-For starters, you will not be dealing with anything that is truly "high power". Instead, what I am considering "high power" is anything with the potential to damage or fry your microcontrollers if you were to drive them directly. The idea behind this part of the lab is to learn how not only to drive things that may require a high voltage or high current, but how to then protect your microcontroller from them.
+# Precision Control
 
-## Switching
-Most of you have used one of the types of switching circuits to control the RGB LEDs. For this part of the lab, you need to focus on the different types of switching circuits along with the differences in inductive and resistive loads.
+## Tyler Brady & Mike Guiliano
 
-### Relays
-A relay is a electro-mechanical system which can open and close a switch based on an input. 
-![Relay](https://www.phidgets.com/docs/images/1/1d/3051_1_Relay_Diagram.jpg)
-These are extremely useful in situations where large amounts of current need to flow, such as in automotive applications, but they do have their limits. For starters, since the actuation process requires a constant current, sometimes this can be too much for your processor to handle. Second, a lot of these relays require higher than 3.3V, which limits how you can actually turn these things on and off. Using the MSP430G2553, control the state of a relay to drive a power resistor with +12V. Your README for this part should include a screenshot of the output of your MSP and the voltage across the resistor. Try to figure out the switching speed limitations of the relay experimentally.
+## PWM 2
+For this section of the lab the code only runs on the 5529. In this section of the lab UART was used as a method
+of input into the MSP device to change the PWM speed. By entering a value in hex through realterm, the PWM signal 
+could be actively set during run time. The output of the PWM was then run through an active lowpass filter as seen 
+below in the circuits section. This is done so that only the carrier frequency of the PWM signal may pass, producing
+a DC signal of the averaged of the signal. This is important in regards to translating a digital signal into an analog one.
 
-### MOSFET Switching
-The MOSFET switch is a very simple circuit which can be used in a multitude of applications. One of the most important features of the MOSFET Switch is the near zero current it takes to switch the MOSFET from an on to an off state. There are two main architectures, low-side and high-side switch, each requiring a different type of MOSFET. Using the MSP430G2553, drive a power resistor with +12V in the same fashion as the relay. Obtain an MSP430G2553 voltage output along with the voltage through the power resistor. Try to figure out the switching speed limitations of the MOSFET experimentally.
+## Connections
+In this code the PWM output is tied to P1.2, while TXD is P3.3 and RXD is P3.4. The output of the PWM can then be connected
+to the low pass circuit, and the device can be communcated with over Realterm.
 
-## Deliverables
-Along with what was asked in each part, you will need to utilize the DMM to determine what the current draw from each switch is and if that falls into spec with the Microcontroller. You need to then come up with the best configuration you can think of using to control something that requires large current, but also protects your processor from damage. The reason I am asking you to do this with just the G2553 is: A) The code is just generating a square wave, and B) this part of the lab runs the highest chance of damaging your parts and we have spare G2553's just in case.
+## R2R DAC
+The main idea behind an R2R ladder is that it can take in digital binary values, and then using a set up of resistors
+such as the one seen below in the circuits section converting the digital values into a analog signal. This process was
+done using a incrementing output. By outputting across P6.0 to P6.6 and P2.7 each of the pins acts as a binary bit within
+the 8 bit byte. Once the byte hits 255, the byte resets to 0. Each of these pins is then connected to one of the legs of the
+R2R ladder producing a triangle function.
+
+## Connections
+Each of the 8 pins is connected starting from P6.0 to the left most leg, all the way to P2.7 at the rightmost leg.
+Then using the supplied code the user can generate a triangle wave.
+
+## Bill Of Materials
+* 1k Resistor x 7
+* 2k Resistor x 9
+* 10k Resistor x 2
+* 270k Resistor x 1
+* 470k Resistor x 1
+* 680k Resistor x 1
+* 820k Resistor x 1
+* 1M Resistor x 1
+* LM324 x 1
+* 100nF Capacitor x 1
+
+## Circuits
+![Low Pass Filter]()
+![R2R DAC]()
+
+## Scopes
+![R2R Ladder Output]()
+![R2R Ladder Output w/ 560k Load]()
+![R2R Ladder Output w/ 1M Load]()
+
+[NEEDS THE DELIVERABLE PARTS FOR SCREENSHOTS!!]
+[Along with what was asked in each of the parts above, for each implementation, you need to generate at least one
+ triangle wave from your microntroller. This can be done by simply incrementing and decrementing values that are 
+being sent to your circuit. You need to measure the output of each one of these along with taking the FFT on the 
+scope of each one. The span on the FFT will need to go from 1kHz to about 50kHz if possible. 
+You then need to compare the integrity of each signal by analyzing the difference in frequency components.
+
+The README for this part is going to be mainly about the results of your measurement along with information on the 
+implementation. You need to also talk about how you generated the triangle wave, but do not give me a 
+dissertation on it. Since this is going to be talking about hardware, you need to place in the README a Bill Of 
+Materials listing all hardware used as well as link to a Digikey cart which contains the parts needed in the 
+right quantity. You do not need to include things like your F5529 or the breadboard or wires.]
