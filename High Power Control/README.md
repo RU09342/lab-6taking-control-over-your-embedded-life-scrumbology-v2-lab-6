@@ -17,7 +17,7 @@ Essentally this allows the MSP430 to drive a strong enough signal to switch the 
 required to power the relay. Then the speed at which the relay could flip on and off was determined by increasing the frequency of the square wave
 toggling the device. The frequency found to produce a square wave which was no longer useable was around 30Hz.
 A similar setup was done for the secound except this time with no relay, and instead only a NMOS. It was found that a NMOS has a much
-high breakdown speed at around 260KHz. The code used to toggle the 
+high breakdown speed at around 260KHz. 
 
 ## Devices
 * MSP430G2553
@@ -32,3 +32,7 @@ of frying the board, the G2553 was used so that a fried chip could be replaced e
 ![Relay XXXHz]()
 ![Mosfet 1Hz](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/High%20Power%20Control/scope_Mosfet.png)
 ![Mosfet 260KHz](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/High%20Power%20Control/scope_mofet_max.png)
+
+## AUTHORS NOTES DELETE WHEN DONE
+Needs a good read over to make sure all the content is good. Also light fluffing/ more sections? Not sure if this
+is enough.

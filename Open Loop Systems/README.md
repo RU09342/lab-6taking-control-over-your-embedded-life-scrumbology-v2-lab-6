@@ -1,27 +1,54 @@
-# Lab 6: Open Loop Systems
-Believe it or not, up to this point, any time that you have wanted to control your LED color or brightness so far, you have been attempting to control an Open Loop System. Basically, when in your code you state that you want a certain brightness or even a duty cycle, you are going on blind faith that the output is actually what it is supposed to be. If something seemed off, you probably went back into the code and tweaked some values. In the case of actual Systems and Control Theory, you are the feedback loop, providing some corrective signal to the system to help obtain a closer output, and we will deal with this in the Milestone. For now, we need to focus on system modeling getting a system to a desirable state. For this lab, you will be attempting to keep a voltage regulator within a specific temperature range using a DC fan which you will have control over. For this part to be a success, you need to figure out what is the minimum fan speed you need to cool off the regulator so that is stays operational.
+# Open Loop Control
 
-## Voltage Regulator
-You will need to take a 5V regulator from the back of the lab and drop the output across a 100 ohm power resistor (1 watt should do the trick). The input to the voltage regulator will be between 15-20V. I am giving you a range because when it is dropping a ton of voltage, it may not be able to cool it off enough with just a fan. Most of the voltage regulators in the back will have a tab on the top which we can place a thermistor to. If provided, you can use that tab, or place a through-hole thermistor making contact to the component on your board.
+## Tyler Brady & Mike Guiliano
 
-## Fan Control
-It will be up to you, the engineer, to decide which method you want to use to control the DC fan. Most of these fans run off of 5V, and as such can not directly be driven by your microcontroller. Depending on the type of fan you use, some can take in a PWM control signal, others will need to have the voltage be modified. Since we are not providing you with any mechanical mounts, you are free to place the fan in whatever orientation you wish, so long as it is safe to operate.
+## Background
+An open loop system is a system in which an input is given, but no feed back comes back. This means the system cannot
+adjust for any outside forces, as the only information it has is what it is initally given by the user. For this specific
+section of the lab, the main focus is on creating a system that can adjust a fan speed so that data can be gathered on the
+effects of the fan speed on the temperature of a voltage regulator. 
 
-## Temperature Reading
-It would be really useful to see what the temperature of your system is so you can determine the performance of your system. This can be done either by displaying the current temperature over a display, passing the information over UART, or other ways as well. Remember that UART is Asynchronous, meaning that you can send information whenever you would like from your controller back to a PC, it doesn't have to be reactionary. If you used MATLAB in Lab 5, you could even plot the temperature over time which could be extremely useful in figuring out whether your system is actually doing something. 
+## Board Choice
+The 5529 was the chosen board for this setup, as the code was already created to send values through UART and that was
+all that was needed within this open loop system.
+
+## The system
+The system itself was created using a collection of smaller subsystems. Overall the entire circuit contains a total of
+three seperate circuits that boil down to being the regulator circuit, the fan control, and the temperature sensor.
+The first of the three subcircuits is the regulator, this circuit consists of a voltage regulator and a power resistor.
+The main purpose of this circuit is to drive enough current through the power resistor to be able to heat it to high
+temperatures quickly, but also without destroying the device. This was done using a 100 Ohm / 5W power resistor and 
+approximately 19V. This allowed the regulator to heat up quickly, but still be cooled by the fan. The secound circuit
+consisted of the fan control. This circuit is similar to those used in the high power section, using a simple mosfet
+to control the fan's connection to ground by the output of the PWM from the 5529. The final segment of the circuit consisted
+of the temperature sensor, which used the LM35 temperature regulator attached to the metal plate of the voltage regulator
+to change an input voltage and give readings to an attached DMM. By combining the three circuits, as well as the code from
+the precision control,  the PWM of the fan was changable on the fly, and various measurements of the effect of different PWM
+speeds on temperature could be taken.
+
+## DATA
+In the data collection steps, data was taken at 10C intervals rather than the specified 5C intervals due to little change at each of
+the smaller steps as well as a larger set of data. The Data was taken using different input voltages to the fan and the voltage regulator,
+as well as different distances. Overall three different data sets were taken to find a more optimal setup for closing the loop later on.
+
+***DATA HERE***
+
+## Usage
+While this system may not be the most practical, due to the heavy limitations of the effects of the outside world, 
+this system is extreamly useful when gathering data to better understand a connected systems affects on the temperature
+of the voltage regulator. Allowing for useful information to be gathered to finally close the loop to the system. In order to
+connect the system correctly, the schematics below show each of the subcircuit setups. When connecting the board, the PWM pin
+specified in the code is connected to the gate of the NMOS, while the UART cables are connected to their corresponding pins also 
+documented in the code file. No other connections to the board are needed as the DMM will handle temperature readings. The 
+connection for the DMM consists of connecting the positive connection to the output of the LM35, and the negative to ground.
+
+## Circuit
+![]()
 
 
-## System Modeling
-For starters, you need to figure out with your fan at MAX what the temperature that the voltage regulator reaches. Your thermistors/PTATs/Whatever else you want to use to measure temperature may not be calibrated, so your results may be consistently off with reality, but for now that is ok. After figuring this out, in increments of about 5C, see what fan speed you need to have to maintain that temperature. Do this until your regulator gets down to about 30C-40C, keeping a record of what your applied Duty Cycles or voltages were. Then using this information, attempt to find a transfer function between the applied input and the resulting temperature to model the system behavior. A simple way to do this is in MATLAB or Excel to plot your applied input on the x-axis, and your steady state temperature on your y-axis and attempt a line fit.
-
-## Open Loop Control System
-You then need to use this information to make a final open loop control system where a user can state what temperature they want the regulator to be maintained at, and the microcontroller will basically calculate/look up what it needs to set the fan to. Do not over complicate this and make it some elaborate system. All this needs to do is some math and set a duty cycle or voltage, and display in some capacity the current temperature of the system as you are measuring it.
-
-
-## Deliverables
-Your README needs to contain schematics of your system, the plot of the plot of the temperature and input voltages at the 5C steps, and a brief talk about why you chose the processor you did along with the control technique for the fan. As always, you should include a brief description of the code you generated to run the experiment. You need to also include information on how to use your control software, including what inputs it is expecting and what range of values you are expecting. At this time you are not going to need to user-proof the system, but you will for the milestone, so keep it in the back of your head.
-
-### What your README and code doesn't need
-For starters, note the fact I ask you to do this with only one board. You also do not need to give me all of your code in the README, just tell me functionally what is going on along with showing off any functions you may have made.
-
-Your code *DOES NOT* need to perform any sort of closed loop control. Save that for the milestone. This means that your system does not need to try to actively change the fan speed without your help. You are going to essentially make your microcontroller one big Convert-o-Box to turn a desired temperature into a controllable signal, and then be able to read a temperature.
+## AUTHORS NOTES DELETE WHEN FINISHED
+* This still needs the circuit schematics and a good read over for any bad grammer, or poor structure.
+Also feel free to add anything you think might be good!
+* Also WE NEED THE DATA FROM KEVIN! He has all of the temperature data in an excel sheet. Can be added as a table
+though im not sure how to do this, or simply a screenshot like in the previous sections.
+*Needs graphs of the temperature!

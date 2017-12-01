@@ -45,8 +45,10 @@ Then using the supplied code the user can generate a triangle wave.
 ![R2R Ladder Output w/ 680k Load](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/r2r-ladder-680k.png)
 ![R2R Ladder Output w/ 1M Load](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/r2r-ladder-1M.png)
 
-[NEEDS THE DELIVERABLE PARTS FOR SCREENSHOTS!!]
-[Along with what was asked in each of the parts above, for each implementation, you need to generate at least one
+
+## AUTHORS NOTES DELETE WHEN DONE
+[NEEDS THE DELIVERABLE PARTS FOR SCREENSHOTS!! DELETE THIS WHEN FINISHED]
+[* Along with what was asked in each of the parts above, for each implementation, you need to generate at least one
  triangle wave from your microntroller. This can be done by simply incrementing and decrementing values that are 
 being sent to your circuit. You need to measure the output of each one of these along with taking the FFT on the 
 scope of each one. The span on the FFT will need to go from 1kHz to about 50kHz if possible. 
@@ -57,3 +59,5 @@ implementation. You need to also talk about how you generated the triangle wave,
 dissertation on it. Since this is going to be talking about hardware, you need to place in the README a Bill Of 
 Materials listing all hardware used as well as link to a Digikey cart which contains the parts needed in the 
 right quantity. You do not need to include things like your F5529 or the breadboard or wires.]
+* The above conditions need to be set, and a good read over needs to be done. Also some light fluffing could be
+useful as well.
