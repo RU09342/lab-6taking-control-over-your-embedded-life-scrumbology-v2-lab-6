@@ -28,7 +28,7 @@ of frying the board, the G2553 was used so that a fried chip could be replaced e
 ![Relay Circuit](lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/High Power Control/RelayCircuit.PNG)
 ![Mosfet Circuit](lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/High Power Control/NMOS_Circuit.PNG)
 ## Scopes
-![Relay 1Hz](lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/High Power Control/Relay.png)
+![Relay 1Hz](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/High%20Power%20Control/Relay.png)
 ![Relay XXXHz]()
 ![Mosfet 1Hz](lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/High Power Control/scope_Mosfet.png)
 ![Mosfet 260KHz](lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/High Power Control/scope_mofet_max.png)
