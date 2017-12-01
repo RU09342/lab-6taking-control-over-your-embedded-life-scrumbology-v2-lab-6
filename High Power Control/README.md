@@ -25,10 +25,10 @@ This project was done only on the G2553 because of the issue of high power. In o
 of frying the board, the G2553 was used so that a fried chip could be replaced easily.
 
 ## Circuits
-![Relay Circuit](lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/High Power Control/RelayCircuit.PNG)
-![Mosfet Circuit](lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/High Power Control/NMOS_Circuit.PNG)
+![Relay Circuit](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/High%20Power%20Control/RelayCircuit.PNG)
+![Mosfet Circuit](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/High%20Power%20Control/NMOS_Circuit.PNG)
 ## Scopes
 ![Relay 1Hz](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/High%20Power%20Control/Relay.png)
 ![Relay XXXHz]()
-![Mosfet 1Hz](lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/High Power Control/scope_Mosfet.png)
-![Mosfet 260KHz](lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/High Power Control/scope_mofet_max.png)
+![Mosfet 1Hz](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/High%20Power%20Control/scope_Mosfet.png)
+![Mosfet 260KHz](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/High%20Power%20Control/scope_mofet_max.png)
