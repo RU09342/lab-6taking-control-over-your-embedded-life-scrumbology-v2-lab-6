@@ -37,13 +37,13 @@ Then using the supplied code the user can generate a triangle wave.
 * 100nF Capacitor x 1
 
 ## Circuits
-![Low Pass Filter]()
-![R2R DAC]()
+![Low Pass Filter](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/LowPassFilter.png)
+![R2R DAC](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/R2R_DAC.png)
 
 ## Scopes
-![R2R Ladder Output]()
-![R2R Ladder Output w/ 560k Load]()
-![R2R Ladder Output w/ 1M Load]()
+![R2R Ladder Output](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/r2r-ladder1.png)
+![R2R Ladder Output w/ 680k Load](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/r2r-ladder-680k.png)
+![R2R Ladder Output w/ 1M Load](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/r2r-ladder-1M.png)
 
 [NEEDS THE DELIVERABLE PARTS FOR SCREENSHOTS!!]
 [Along with what was asked in each of the parts above, for each implementation, you need to generate at least one
