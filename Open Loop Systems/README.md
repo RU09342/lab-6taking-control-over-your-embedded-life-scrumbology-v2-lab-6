@@ -99,6 +99,8 @@ connect the system correctly, the schematics below show each of the subcircuit s
 specified in the code is connected to the gate of the NMOS, while the UART cables are connected to their corresponding pins also 
 documented in the code file. No other connections to the board are needed as the DMM will handle temperature readings. The 
 connection for the DMM consists of connecting the positive connection to the output of the LM35, and the negative to ground.
+It is also important to note that when connecting the system with a UART cable, the board needs to share a common ground with the
+rest of the circuit.
 
 ## Circuit
 ### Open Loop Circuit
@@ -107,10 +109,3 @@ connection for the DMM consists of connecting the positive connection to the out
 ## Data Graphs
 ### 19V w/ paperclip
 ![19V](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Open%20Loop%20Systems/19V.PNG)
-
-## AUTHORS NOTES DELETE WHEN FINISHED
-* This still needs the circuit schematics and a good read over for any bad grammer, or poor structure.
-Also feel free to add anything you think might be good!
-* Also WE NEED THE DATA FROM KEVIN! He has all of the temperature data in an excel sheet. Can be added as a table
-though im not sure how to do this, or simply a screenshot like in the previous sections.
-*Needs graphs of the temperature!
