@@ -48,21 +48,19 @@ as well as different distances. Overall three different data sets were taken to 
 
 
 ### 18V Across Fan and Regulator w/ Paperclip heatsink
-|	18V w/ Paperclip        |         19V w/ Paperclip      |
-|-------------------------------|-------------------------------|
-| PWM           | Temperature C°| PWM           | Temperature C°|
-| ------------- | ------------- | ------------- | ------------- |
-| 0%            | 81.37°C       | 0%            | 88.62°C       |
-| 10%           | 48.98°C       | 10%           | 49.14°C       |
-| 20%           | 45.92°C       | 20%           | 45.92°C       |
-| 30%           | 43.50°C       | 30%           | 43.50°C       |
-| 40%           | 41.89°C       | 40%           | 41.89°C       |
-| 50%           | 40.28°C       | 50%           | 40.28°C       |
-| 60%           | 38.26°C       | 60%           | 38.51°C       |
-| 70%           | 37.06°C       | 70%           | 37.25°C       |
-| 80%           | 36.25°C       | 80%           | 36.25°C       |
-| 90%           | 36.09°C       | 90%           | 35.44°C       |
-| 100%          | 35.77°C       | 100%          | 35.44°C       |
+| PWM           | Temperature C°|
+| ------------- | ------------- |
+| 0%            | 81.37°C       |
+| 10%           | 48.98°C       |
+| 20%           | 45.92°C       |
+| 30%           | 43.50°C       | 
+| 40%           | 41.89°C       | 
+| 50%           | 40.28°C       |
+| 60%           | 38.26°C       |
+| 70%           | 37.06°C       |
+| 80%           | 36.25°C       |
+| 90%           | 36.09°C       |
+| 100%          | 35.77°C       |
 
 
 ### 19V Across Fan and Regulator w/ Paperclip heatsink
@@ -100,12 +98,8 @@ connection for the DMM consists of connecting the positive connection to the out
 ![Open Loop Circuit](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Open%20Loop%20Systems/OpenloopSchematic.PNG)
 
 ## Data Graphs
-### 20V 
-![20V]()
-### 18V w/ paperclip
-![18V]()
 ### 19V w/ paperclip
-![19V]()
+![19V](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Open%20Loop%20Systems/19V.PNG)
 
 ## AUTHORS NOTES DELETE WHEN FINISHED
 * This still needs the circuit schematics and a good read over for any bad grammer, or poor structure.
