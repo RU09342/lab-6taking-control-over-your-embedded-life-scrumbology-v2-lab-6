@@ -31,7 +31,53 @@ In the data collection steps, data was taken at 10C intervals rather than the sp
 the smaller steps as well as a larger set of data. The Data was taken using different input voltages to the fan and the voltage regulator,
 as well as different distances. Overall three different data sets were taken to find a more optimal setup for closing the loop later on.
 
-***DATA HERE***
+### 20V Across Fan and Regulator
+| PWM           | Temperature C°|
+| ------------- | ------------- |
+| 0%            | 174.83°C      |
+| 10%           | 85.4°C        |
+| 20%           | 76.94°C       |
+| 30%           | 72.51°C       |
+| 40%           | 68.48°C       |
+| 50%           | 66.06°C       |
+| 60%           | 63.65°C       |
+| 70%           | 61.23°C       |
+| 80%           | 58.81°C       |
+| 90%           | 58.01°C       |
+| 100%          | 58.01°C       |
+
+
+### 18V Across Fan and Regulator w/ Paperclip heatsink
+| PWM           | Temperature C°|
+| ------------- | ------------- |
+| 0%            | 81.37°C       |
+| 10%           | 48.98°C       |
+| 20%           | 45.92°C       |
+| 30%           | 43.50°C       |
+| 40%           | 41.89°C       |
+| 50%           | 40.28°C       |
+| 60%           | 38.26°C       |
+| 70%           | 37.06°C       |
+| 80%           | 36.25°C       |
+| 90%           | 36.09°C       |
+| 100%          | 35.77°C       |
+
+
+### 19V Across Fan and Regulator w/ Paperclip heatsink
+| PWM           | Temperature C°|
+| ------------- | ------------- |
+| 0%            | 88.62°C       |
+| 10%           | 49.14°C       |
+| 20%           | 45.92°C       |
+| 30%           | 43.50°C       |
+| 40%           | 41.89°C       |
+| 50%           | 40.28°C       |
+| 60%           | 38.51°C       |
+| 70%           | 37.25°C       |
+| 80%           | 36.25°C       |
+| 90%           | 35.44°C       |
+| 100%          | 35.44°C       |
+
 
 ## Usage
 While this system may not be the most practical, due to the heavy limitations of the effects of the outside world, 
@@ -43,7 +89,7 @@ documented in the code file. No other connections to the board are needed as the
 connection for the DMM consists of connecting the positive connection to the output of the LM35, and the negative to ground.
 
 ## Circuit
-![]()
+![Open Loop Circuit]()
 
 
 ## AUTHORS NOTES DELETE WHEN FINISHED

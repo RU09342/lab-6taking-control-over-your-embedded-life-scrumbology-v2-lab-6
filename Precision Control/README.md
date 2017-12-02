@@ -13,6 +13,11 @@ a DC signal of the averaged of the signal. This is important in regards to trans
 In this code the PWM output is tied to P1.2, while TXD is P3.3 and RXD is P3.4. The output of the PWM can then be connected
 to the low pass circuit, and the device can be communcated with over Realterm.
 
+### FFT
+In the FFT that can be found in the scopes section, the effects of the low pass filter can be seen on the output.
+The sweep down as the frequency increases shows that only the lower frequencies are making it through the filter, and the
+remaining high frequencies are beening sorted out.
+
 ## R2R DAC
 The main idea behind an R2R ladder is that it can take in digital binary values, and then using a set up of resistors
 such as the one seen below in the circuits section converting the digital values into a analog signal. This process was
