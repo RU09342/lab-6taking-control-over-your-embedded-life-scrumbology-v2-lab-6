@@ -84,8 +84,12 @@ In the end the data set chosen was the final one. This was the data set with the
 By using the data found in testing different fan PWM values, an equation was found that once implemented to the system could take a °C value and convert it into a PWM value to attempt to hold the value stable.
 The equations were solved in segments, the first of which controls the temperatures between 90°C and 50°C.
 `Y = -0.2533x + 22.449`
-The secound half of the equation controls from 50°C to approximatly 35°C.
+The second half of the equation controls from 50°C to approximatly 35°C.
 `Y = 0.3368x^2 - 34.397x + 888.18`
+Using these equations a system can be implemented using the code for this section. Instead taking in a PWM value, a temperature value is taken instead and using a if statement
+controls where the inputed temperature falls in regards to the equations. Then the equations can be applied and PWM set. While this will allow for a temperature to be set, this
+system will not account for any possible changes from the original system, meaning changing the fan, regulator position, or any other factors will completely change the equation and cause the found
+equation to be useless.
 
 ## Usage
 While this system may not be the most practical, due to the heavy limitations of the effects of the outside world, 
