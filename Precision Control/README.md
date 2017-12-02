@@ -9,7 +9,7 @@ could be actively set during run time. The output of the PWM was then run throug
 below in the circuits section. This is done so that only the carrier frequency of the PWM signal may pass, producing
 a DC signal of the averaged of the signal. This is important in regards to translating a digital signal into an analog one.
 
-## Connections
+### Connections
 In this code the PWM output is tied to P1.2, while TXD is P3.3 and RXD is P3.4. The output of the PWM can then be connected
 to the low pass circuit, and the device can be communcated with over Realterm.
 
@@ -20,11 +20,11 @@ done using a incrementing output. By outputting across P6.0 to P6.6 and P2.7 eac
 the 8 bit byte. Once the byte hits 255, the byte resets to 0. Each of these pins is then connected to one of the legs of the
 R2R ladder producing a triangle function.
 
-## FFT
+### FFT
 In the case of the FFT data found, it can be seen below that by adding in a loading effect of 1M ohm the lower frequencies
 even out to be similar to all other frequencies.
 
-## Connections
+### Connections
 Each of the 8 pins is connected starting from P6.0 to the left most leg, all the way to P2.7 at the rightmost leg.
 Then using the supplied code the user can generate a triangle wave.
 
