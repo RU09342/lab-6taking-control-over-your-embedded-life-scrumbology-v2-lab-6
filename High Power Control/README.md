@@ -36,7 +36,3 @@ of frying the board, the G2553 was used so that a fried chip could be replaced e
 ![Mosfet 1Hz](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/High%20Power%20Control/scope_Mosfet.png)
 ### Mosfet 260KHz
 ![Mosfet 260KHz](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/High%20Power%20Control/scope_mofet_max.png)
-
-## AUTHORS NOTES DELETE WHEN DONE
-Needs a good read over to make sure all the content is good. Also light fluffing/ more sections? Not sure if this
-is enough.
