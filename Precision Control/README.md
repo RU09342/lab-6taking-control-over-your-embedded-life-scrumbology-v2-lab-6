@@ -20,6 +20,10 @@ done using a incrementing output. By outputting across P6.0 to P6.6 and P2.7 eac
 the 8 bit byte. Once the byte hits 255, the byte resets to 0. Each of these pins is then connected to one of the legs of the
 R2R ladder producing a triangle function.
 
+## FFT
+In the case of the FFT data found, it can be seen below that by adding in a loading effect of 1M ohm the lower frequencies
+even out to be similar to all other frequencies.
+
 ## Connections
 Each of the 8 pins is connected starting from P6.0 to the left most leg, all the way to P2.7 at the rightmost leg.
 Then using the supplied code the user can generate a triangle wave.
@@ -44,7 +48,11 @@ Then using the supplied code the user can generate a triangle wave.
 ![R2R Ladder Output](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/r2r-ladder1.png)
 ![R2R Ladder Output w/ 680k Load](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/r2r-ladder-680k.png)
 ![R2R Ladder Output w/ 1M Load](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/r2r-ladder-1M.png)
-
+![R2R Ladder Triangle w/ 470k](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/triangle470k1.png)
+![R2R Ladder Triangle w/ 1M](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/triangle1meg1.png)
+![Triangle FFT](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/trianglefft1.png)
+![Triangle FFT w/ 1M](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/trianglefft2.png)
+![Low pass filter FFT](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/lpffft.png)
 
 ## AUTHORS NOTES DELETE WHEN DONE
 [NEEDS THE DELIVERABLE PARTS FOR SCREENSHOTS!! DELETE THIS WHEN FINISHED]
