@@ -41,17 +41,27 @@ Then using the supplied code the user can generate a triangle wave.
 * 100nF Capacitor x 1
 
 ## Circuits
+Low Pass Filter
 ![Low Pass Filter](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/LowPassFilter.png)
+R2R DAC
 ![R2R DAC](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/R2R_DAC.png)
 
 ## Scopes
+R2R Ladder Output
 ![R2R Ladder Output](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/r2r-ladder1.png)
+R2R Ladder Output w/ 680k Load
 ![R2R Ladder Output w/ 680k Load](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/r2r-ladder-680k.png)
+R2R Ladder Output w/ 1M Load
 ![R2R Ladder Output w/ 1M Load](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/r2r-ladder-1M.png)
+R2R Ladder Triangle w/ 470k
 ![R2R Ladder Triangle w/ 470k](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/triangle470k1.png)
+R2R Ladder Triangle w/ 1M
 ![R2R Ladder Triangle w/ 1M](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/triangle1meg1.png)
+Triangle FFT
 ![Triangle FFT](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/trianglefft1.png)
+Triangle FFT w/ 1M
 ![Triangle FFT w/ 1M](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/trianglefft2.png)
+Low pass filter FFT
 ![Low pass filter FFT](https://github.com/RU09342/lab-6taking-control-over-your-embedded-life-scrumbology-v2-lab-6/blob/master/Precision%20Control/lpffft.png)
 
 ## AUTHORS NOTES DELETE WHEN DONE
