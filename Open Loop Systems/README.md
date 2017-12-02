@@ -33,7 +33,7 @@ as well as different distances. Overall three different data sets were taken to 
 
 ### 20V Across Fan and Regulator
 | PWM           | Temperature C°|
-| ------------- | ------------- |
+| :-----------: | :-----------: |
 | 0%            | 174.83°C      |
 | 10%           | 85.4°C        |
 | 20%           | 76.94°C       |
@@ -49,7 +49,7 @@ as well as different distances. Overall three different data sets were taken to 
 
 ### 18V Across Fan and Regulator w/ Paperclip heatsink
 | PWM           | Temperature C°|
-| ------------- | ------------- |
+| :-----------: | :-----------: |
 | 0%            | 81.37°C       |
 | 10%           | 48.98°C       |
 | 20%           | 45.92°C       |
@@ -65,7 +65,7 @@ as well as different distances. Overall three different data sets were taken to 
 
 ### 19V Across Fan and Regulator w/ Paperclip heatsink
 | PWM           | Temperature C°|
-| ------------- | ------------- |
+| :-----------: | :-----------: |
 | 0%            | 88.62°C       |
 | 10%           | 49.14°C       |
 | 20%           | 45.92°C       |
@@ -78,11 +78,14 @@ as well as different distances. Overall three different data sets were taken to 
 | 90%           | 35.44°C       |
 | 100%          | 35.44°C       |
 
-In the end the data set chosen was the final one. This was the data set with the best deviation in temperatures, allowing the system to climb to 90°C and hold stable at 35°C.
+In the end the data set chosen was the final one. This was the data set with the best deviation in temperatures, allowing the system to climb to as high as 90°C, while also holding stable at 35°C.
 
 ## Equation control
 By using the data found in testing different fan PWM values, an equation was found that once implemented to the system could take a °C value and convert it into a PWM value to attempt to hold the value stable.
-The equations were solved in segments 
+The equations were solved in segments, the first of which controls the temperatures between 90°C and 50°C.
+`Y = -0.2533x + 22.449`
+The secound half of the equation controls from 50°C to approximatly 35°C.
+`Y = 0.3368x^2 - 34.397x + 888.18`
 
 ## Usage
 While this system may not be the most practical, due to the heavy limitations of the effects of the outside world, 
